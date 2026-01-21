@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "Think1" {
-  name     = "Think1"
-  location = "East US"
+resource "azurerm_resource_group" "think1" {
+    name = "think1-rg"
+    location = "East US"
 }
