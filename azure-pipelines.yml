@@ -9,6 +9,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/rg_test'
     backendServiceArm: 'AZ-AD-Connection16'
     backendAzureRmOverrideSubscriptionID: '0bc661e3-3fc6-4649-92e7-740d5c1311fb'
     backendAzureRmResourceGroupName: 'rgkulvinder'
@@ -20,11 +21,13 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/rg_test'
     environmentServiceNameAzureRM: 'AZ-AD-Connection16'
     environmentAzureRmOverrideSubscriptionID: '0bc661e3-3fc6-4649-92e7-740d5c1311fb'
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/rg_test'
     environmentServiceNameAzureRM: 'AZ-AD-Connection16'
     environmentAzureRmOverrideSubscriptionID: '0bc661e3-3fc6-4649-92e7-740d5c1311fb'
